@@ -62,7 +62,7 @@ body {
 .navbar .logo img {
     height: 50px;
     width: auto;
-    margin-right: 10px;
+    margin-right: 1px;
 }
 
 .navbar .nav-links {
@@ -92,40 +92,7 @@ body {
     cursor: pointer;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .navbar .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 65px;
-        right: 0;
-        background: #242424;
-        width: 100%;
-        text-align: right;
-    }
 
-    .navbar .nav-links.open {
-        display: flex;
-    }
-
-    .navbar .nav-links li {
-        margin: 0;
-    }
-
-    .navbar .nav-links a {
-        padding: 15px 20px;
-    }
-
-    .navbar .menu-toggle {
-        display: block;
-    }
-
-    .navbar .menu-toggle i {
-        font-size: 24px;
-        color: #fff;
-    }
-}
 
 
 
