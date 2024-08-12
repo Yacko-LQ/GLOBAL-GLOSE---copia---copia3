@@ -30,7 +30,6 @@ body {
 
 
 
-
 /* Barra de navegación */
 .navbar {
     transition: all ease-in-out 1s;
@@ -43,15 +42,16 @@ body {
     top: 0;
     left: 0;
     display: flex;
-    justify-content: flex-end; /* Cambiado a flex-end */
+    justify-content: flex-end;
     align-items: center;
-    z-index: 10; 
+    z-index: 10;
 }
 
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .navbar .logo {
@@ -62,7 +62,7 @@ body {
 .navbar .logo img {
     height: 50px;
     width: auto;
-    margin-right: 10px; /* Ajusta el espacio entre los logos según sea necesario */
+    margin-right: 10px;
 }
 
 .navbar .nav-links {
@@ -92,7 +92,40 @@ body {
     cursor: pointer;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: #242424;
+        width: 100%;
+        text-align: right;
+    }
 
+    .navbar .nav-links.open {
+        display: flex;
+    }
+
+    .navbar .nav-links li {
+        margin: 0;
+    }
+
+    .navbar .nav-links a {
+        padding: 15px 20px;
+    }
+
+    .navbar .menu-toggle {
+        display: block;
+    }
+
+    .navbar .menu-toggle i {
+        font-size: 24px;
+        color: #fff;
+    }
+}
 
 
 

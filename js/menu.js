@@ -14,3 +14,8 @@ document.querySelectorAll('.sidebar-links a').forEach(link => {
         document.getElementById('sidebar').classList.remove('open');
     });
 });
+
+// Alternar menú en dispositivos móviles
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('open');
+});
