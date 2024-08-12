@@ -113,7 +113,7 @@ body {
 .sidebar .close-btn {
     position: absolute;
     top: 20px;
-    left: 20px;
+    right: 20px;
     font-size: 30px;
     color: #fff;
     background: transparent;
@@ -152,7 +152,7 @@ body {
 .sidebar-toggle {
     position: fixed;
     top: 20px;
-    right: 20px;
+    left: 20px;
     background: #242424;
     color: #fff;
     border: none;
@@ -174,7 +174,7 @@ body {
 
 /* Mostrar la barra lateral */
 .sidebar.open {
-    right: 0;
+    left: 0;
 }
 
 /* Hacer responsive la barra lateral */
