@@ -136,7 +136,7 @@ body {
 /* Botón para abrir la barra lateral */
 .sidebar-toggle {
     position: fixed;
-    top: 20px;
+    top: 70px;
     left: 20px;
     background: #242424;
     color: #fff;
