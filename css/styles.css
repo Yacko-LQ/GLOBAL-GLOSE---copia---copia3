@@ -95,7 +95,6 @@ body {
 
 
 
-
 /* Barra lateral */
 .sidebar {
     position: fixed;
@@ -110,6 +109,24 @@ body {
     z-index: 1000;
 }
 
+/* Logo sin círculo */
+.sidebar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0; /* Ajustar el padding para mover el logo más al frente */
+    background: transparent; /* Quitar el fondo para hacer el logo más visible sin círculo */
+}
+
+.sidebar-logo img {
+    width: 120px; /* Tamaño del logo */
+    height: auto; /* Mantener la proporción del logo */
+    border: none; /* Eliminar el borde */
+    background: transparent; /* Asegurar que no haya fondo detrás del logo */
+    z-index: 1001; /* Asegurarse de que el logo esté en el frente */
+}
+
+/* Botón de cierre */
 .sidebar .close-btn {
     position: absolute;
     top: 20px;
@@ -119,11 +136,13 @@ body {
     background: transparent;
     border: none;
     cursor: pointer;
+    z-index: 1001; /* Asegurarse de que el botón esté en el frente */
 }
 
+/* Enlaces de la barra lateral */
 .sidebar .sidebar-links {
     list-style: none;
-    padding: 60px 0 0;
+    padding: 0;
     margin: 0;
 }
 
