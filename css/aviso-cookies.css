@@ -52,7 +52,7 @@ body {
 .navbar .logo img {
     height: 50px;
     width: auto;
-    margin-right: 10px;
+    margin-right: 1px;
 }
 
 .navbar .nav-links {
@@ -61,7 +61,7 @@ body {
 }
 
 .navbar .nav-links li {
-    margin-left: 20px;
+    margin-left: 60px;
 }
 
 .navbar .nav-links a {
