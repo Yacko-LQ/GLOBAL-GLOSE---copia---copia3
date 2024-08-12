@@ -113,7 +113,7 @@ body {
 .sidebar .close-btn {
     position: absolute;
     top: 20px;
-    right: 20px;
+    left: 20px;
     font-size: 30px;
     color: #fff;
     background: transparent;
@@ -174,7 +174,7 @@ body {
 
 /* Mostrar la barra lateral */
 .sidebar.open {
-    left: 0;
+    right: 0;
 }
 
 /* Hacer responsive la barra lateral */
