@@ -121,6 +121,7 @@ body {
 
 
 
+
 /* Enlaces de la barra lateral */
 .sidebar .sidebar-links {
     list-style: none;
@@ -185,8 +186,6 @@ body {
         display: none;
     }
 }
-
-
 
 
 
@@ -507,4 +506,3 @@ footer {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
