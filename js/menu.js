@@ -55,3 +55,19 @@ function closeSidebar() {
     document.getElementById('sidebar').classList.remove('open');
     document.getElementById('sidebar-toggle').style.display = 'flex'; // Mostrar el botón de menú nuevamente
 }
+
+
+// Búsqueda dinámica en la barra lateral
+document.getElementById('search-input').addEventListener('input', function() {
+    let filter = this.value.toLowerCase();
+    let links = document.querySelectorAll('#sidebar-links li');
+
+    links.forEach(function(link) {
+        let text = link.textContent.toLowerCase();
+        if (text.includes(filter)) {
+            link.style.display = '';
+        } else {
+            link.style.display = 'none';
+        }
+    });
+});

@@ -191,6 +191,27 @@ body {
     }
 }
 
+/* Estilos para el campo de búsqueda */
+.sidebar-search {
+    padding: 15px 20px;
+    border-bottom: 1px solid #333;
+}
+
+.sidebar-search input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    background-color: #242424;
+    color: #fff;
+}
+
+.sidebar-search input::placeholder {
+    color: #999;
+}
+
 
 /* Sección de presentación */
 
