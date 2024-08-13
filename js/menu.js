@@ -1,3 +1,26 @@
+// Variables para el deslizamiento
+let touchStartX = 0;
+let touchEndX = 0;
+
+// Función para manejar el inicio del toque
+document.getElementById('sidebar').addEventListener('touchstart', function(event) {
+    touchStartX = event.changedTouches[0].screenX;
+}, false);
+
+// Función para manejar el final del toque
+document.getElementById('sidebar').addEventListener('touchend', function(event) {
+    touchEndX = event.changedTouches[0].screenX;
+    handleGesture();
+}, false);
+
+// Función para manejar el gesto de deslizamiento
+function handleGesture() {
+    if (touchEndX < touchStartX) { // Si se desliza hacia la izquierda
+        document.getElementById('sidebar').classList.remove('open');
+        document.getElementById('sidebar-toggle').style.display = 'flex'; // Mostrar el botón de menú
+    }
+}
+
 // Cerrar el menú lateral al seleccionar una sección
 document.querySelectorAll('.sidebar-links a').forEach(link => {
     link.addEventListener('click', function() {
@@ -6,21 +29,10 @@ document.querySelectorAll('.sidebar-links a').forEach(link => {
     });
 });
 
-// Alternar menú en dispositivos móviles
-document.getElementById('menu-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('open');
-});
-
 // Mostrar la barra lateral y ocultar el botón al hacer clic en el botón de menú
 document.getElementById('sidebar-toggle').addEventListener('click', function() {
     document.getElementById('sidebar').classList.add('open');
     this.style.display = 'none'; // Ocultar el botón de menú
-});
-
-// Cerrar la barra lateral y volver a mostrar el botón al hacer clic en el botón de cierre
-document.getElementById('close-btn').addEventListener('click', function() {
-    document.getElementById('sidebar').classList.remove('open');
-    document.getElementById('sidebar-toggle').style.display = 'flex'; // Mostrar el botón de menú nuevamente
 });
 
 // Mantener el botón activo mientras el usuario está en la página
@@ -35,3 +47,12 @@ document.getElementById('sidebar').addEventListener('transitionend', function() 
     }
 });
 
+// Función para ocultar la barra lateral al hacer clic fuera de ella
+document.addEventListener('click', function(event) {
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    if (sidebar.classList.contains('open') && !sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+        sidebar.classList.remove('open');
+        sidebarToggle.style.display = 'flex'; // Mostrar el botón de menú nuevamente
+    }
+});

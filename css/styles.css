@@ -104,7 +104,7 @@ body {
     height: 100%;
     background: #242424;
     color: #fff;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); /* Ajustar la sombra al lado izquierdo */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
     transition: left 0.3s ease;
     z-index: 1000;
 }
@@ -114,29 +114,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0; /* Ajustar el padding para mover el logo más al frente */
-    background: transparent; /* Quitar el fondo para hacer el logo más visible sin círculo */
+    padding: 20px 0;
+    background: transparent;
 }
 
 .sidebar-logo img {
-    width: 120px; /* Tamaño del logo */
-    height: auto; /* Mantener la proporción del logo */
-    border: none; /* Eliminar el borde */
-    background: transparent; /* Asegurar que no haya fondo detrás del logo */
-    z-index: 1001; /* Asegurarse de que el logo esté en el frente */
-}
-
-/* Botón de cierre */
-.sidebar .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px; /* Cambiar la posición del botón de cierre al lado derecho */
-    font-size: 30px;
-    color: #fff;
-    background: transparent;
+    width: 120px;
+    height: auto;
     border: none;
-    cursor: pointer;
-    z-index: 1001; /* Asegurarse de que el botón esté en el frente */
+    background: transparent;
+    z-index: 1001;
 }
 
 /* Enlaces de la barra lateral */
