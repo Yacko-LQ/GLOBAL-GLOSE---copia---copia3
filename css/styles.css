@@ -109,6 +109,88 @@ body {
     z-index: 1000;
 }
 
+/* Logo sin círculo */
+.sidebar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background: transparent;
+}
+
+.sidebar-logo img {
+    width: 120px;
+    height: auto;
+    border: none;
+    background: transparent;
+    z-index: 1001;
+}
+
+/* Enlaces de la barra lateral */
+.sidebar .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .sidebar-links li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #333;
+}
+
+.sidebar .sidebar-links li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .sidebar-links li a i {
+    margin-right: 10px;
+}
+
+.sidebar .sidebar-links li a:hover {
+    background: #e8491d;
+    border-radius: 5px;
+}
+
+/* Botón para abrir la barra lateral */
+.sidebar-toggle {
+    position: fixed;
+    top: 70px;
+    left: 20px;
+    background: #242424;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    background: #e8491d;
+}
+
+/* Mostrar la barra lateral */
+.sidebar.open {
+    left: 0;
+}
+
+/* Hacer responsive la barra lateral */
+@media (min-width: 768px) {
+    .sidebar,
+    .sidebar-toggle {
+        display: none;
+    }
+}
+
 /* Estilos para el campo de búsqueda */
 .sidebar-search {
     padding: 15px 20px;
@@ -129,31 +211,6 @@ body {
 .sidebar-search input::placeholder {
     color: #999;
 }
-
-/* Ajustes responsivos para móviles */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 80%; /* Ajuste de ancho para móviles */
-        left: -80%; /* Oculta la barra inicialmente */
-    }
-
-    .sidebar-search input {
-        font-size: 14px; /* Ajuste de tamaño de fuente para dispositivos móviles */
-        padding: 8px; /* Ajuste de padding */
-    }
-
-    .sidebar-links li {
-        padding: 12px 15px; /* Ajuste del padding en los enlaces */
-    }
-
-    .sidebar-toggle {
-        left: 15px; /* Ajuste de posición para el botón de la barra lateral */
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-    }
-}
-
 
 
 /* Sección de presentación */
