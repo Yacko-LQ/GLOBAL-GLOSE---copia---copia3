@@ -16,16 +16,14 @@ document.getElementById('sidebar').addEventListener('touchend', function(event) 
 // Función para manejar el gesto de deslizamiento
 function handleGesture() {
     if (touchEndX < touchStartX) { // Si se desliza hacia la izquierda
-        document.getElementById('sidebar').classList.remove('open');
-        document.getElementById('sidebar-toggle').style.display = 'flex'; // Mostrar el botón de menú
+        closeSidebar();
     }
 }
 
 // Cerrar el menú lateral al seleccionar una sección
 document.querySelectorAll('.sidebar-links a').forEach(link => {
     link.addEventListener('click', function() {
-        document.getElementById('sidebar').classList.remove('open');
-        document.getElementById('sidebar-toggle').style.display = 'flex'; // Mostrar el botón de menú nuevamente
+        closeSidebar();
     });
 });
 
@@ -35,11 +33,6 @@ document.getElementById('sidebar-toggle').addEventListener('click', function() {
     this.style.display = 'none'; // Ocultar el botón de menú
 });
 
-// Mantener el botón activo mientras el usuario está en la página
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('sidebar-toggle').style.display = 'flex'; // Mantener el botón visible al cargar la página
-});
-
 // Ocultar el botón cuando el menú lateral está abierto
 document.getElementById('sidebar').addEventListener('transitionend', function() {
     if (this.classList.contains('open')) {
@@ -47,12 +40,18 @@ document.getElementById('sidebar').addEventListener('transitionend', function() 
     }
 });
 
-// Función para ocultar la barra lateral al hacer clic fuera de ella
+// Cerrar la barra lateral al hacer clic fuera de ella
 document.addEventListener('click', function(event) {
     const sidebar = document.getElementById('sidebar');
     const sidebarToggle = document.getElementById('sidebar-toggle');
+
     if (sidebar.classList.contains('open') && !sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
-        sidebar.classList.remove('open');
-        sidebarToggle.style.display = 'flex'; // Mostrar el botón de menú nuevamente
+        closeSidebar();
     }
 });
+
+// Función para cerrar la barra lateral y mostrar el botón de menú
+function closeSidebar() {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('sidebar-toggle').style.display = 'flex'; // Mostrar el botón de menú nuevamente
+}
