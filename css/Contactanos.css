@@ -257,7 +257,7 @@ body {
 }
 
 .container-form a i{
-    color: orange;
+    color: #c73e16;
     margin-right: 10px;
 }
 
@@ -281,7 +281,7 @@ body {
     font-size: 16px;
     border: none;
     outline: 0px;
-    background: orange;
+    background: #c73e16;
     color: white;
     border-radius: 3px;
     cursor: pointer;

@@ -71,3 +71,29 @@ document.getElementById('search-input').addEventListener('input', function() {
         }
     });
 });
+
+// Búsqueda dinámica en la barra lateral
+document.getElementById('search-input').addEventListener('input', function() {
+    let filter = this.value.toLowerCase();
+    let links = document.querySelectorAll('#sidebar-links li');
+
+    links.forEach(function(link) {
+        let text = link.textContent.toLowerCase();
+        if (text.includes(filter)) {
+            link.style.display = '';
+        } else {
+            link.style.display = 'none';
+        }
+    });
+});
+
+// Limpiar el campo de búsqueda al hacer clic en un enlace
+document.querySelectorAll('#sidebar-links li a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        document.getElementById('search-input').value = '';
+        // Mostrar todos los enlaces nuevamente
+        document.querySelectorAll('#sidebar-links li').forEach(function(link) {
+            link.style.display = '';
+        });
+    });
+});
