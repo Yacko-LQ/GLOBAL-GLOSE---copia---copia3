@@ -10,7 +10,7 @@ body {
 }
 
 /* Estilos para el aviso de cookies en PC */
-.aviso-cookies-pc {
+#aviso-cookies-pc {
     display: none; /* Oculto por defecto */
     background: #fff;
     padding: 20px;
@@ -31,44 +31,73 @@ body {
 
 /* Mostrar el aviso de cookies solo en pantallas grandes (PC) */
 @media (min-width: 1025px) {
-    .aviso-cookies-pc {
+    #aviso-cookies-pc {
         display: block;
     }
 
-    .fondo-aviso-cookies-pc {
+    #fondo-aviso-cookies-pc {
         display: block;
     }
 }
 
-/* Hacer el aviso responsive */
-@media (max-width: 1200px) {
-    .aviso-cookies-pc {
-        max-width: 500px; /* Ajustar para pantallas más pequeñas */
+/* Estilos para el aviso de cookies en dispositivos móviles y tabletas */
+.aviso-cookies {
+    display: none; /* Oculto por defecto */
+    background: #fff;
+    padding: 20px;
+    width: calc(100% - 40px);
+    max-width: 300px; /* Ajusta el ancho máximo según sea necesario */
+    line-height: 150%;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    padding-top: 50px;
+    box-shadow: 0px 2px 20px 10px rgba(222, 222, 222, .25);
+    text-align: center;
+}
+
+/* Mostrar el aviso de cookies solo en pantallas pequeñas (móviles y tablets) */
+@media (max-width: 1024px) {
+    .aviso-cookies.activo {
+        display: block;
+    }
+
+    .fondo-aviso-cookies.activo {
+        display: block;
     }
 }
 
-@media (max-width: 768px) {
-    .aviso-cookies-pc {
-        width: calc(100% - 40px); /* Ajustar el ancho en pantallas más pequeñas */
-        max-width: 90%; /* Ajustar el ancho máximo en pantallas más pequeñas */
-        min-height: auto; /* Ajustar la altura mínima en pantallas más pequeñas */
-    }
-}
-
-.aviso-cookies-pc .galleta {
-    max-width: 270px; /* Ajustar tamaño si es necesario */
+/* Ajustes para el logo de la cookie */
+#aviso-cookies-pc .galleta,
+.aviso-cookies .galleta {
     position: absolute;
-    top: -0px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.aviso-cookies-pc .titulo,
-.aviso-cookies-pc .parrafo {
+#aviso-cookies-pc .galleta {
+    max-width: 270px; /* Ajustar tamaño si es necesario */
+    top: -0px;
+}
+
+.aviso-cookies .galleta {
+    max-width: 100px;
+    top: -50px;
+}
+
+/* Ajustes para los textos y botones */
+#aviso-cookies-pc .titulo,
+#aviso-cookies-pc .parrafo,
+.aviso-cookies .titulo,
+.aviso-cookies .parrafo {
     margin-bottom: 15px;
 }
 
-.aviso-cookies-pc .boton {
+#aviso-cookies-pc .boton,
+.aviso-cookies .boton {
     width: 100%;
     background: #595959;
     border: none;
@@ -84,22 +113,26 @@ body {
     font-size: 14px;
 }
 
-.aviso-cookies-pc .boton:hover {
+#aviso-cookies-pc .boton:hover,
+.aviso-cookies .boton:hover {
     background: #e8491d;
 }
 
-.aviso-cookies-pc .enlace {
+#aviso-cookies-pc .enlace,
+.aviso-cookies .enlace {
     color: #4DBFFF;
     text-decoration: none;
     font-size: 14px;
-    
 }
 
-.aviso-cookies-pc .enlace:hover {
+#aviso-cookies-pc .enlace:hover,
+.aviso-cookies .enlace:hover {
     text-decoration: underline;
 }
 
-.fondo-aviso-cookies-pc {
+/* Fondo del aviso de cookies */
+#fondo-aviso-cookies-pc,
+.fondo-aviso-cookies {
     display: none; /* Oculto por defecto */
     background: rgba(0, 0, 0, .20);
     position: fixed;
@@ -108,4 +141,18 @@ body {
     height: 100vh;
     top: 0;
     left: 0;
+}
+
+/* Mostrar el fondo del aviso de cookies solo en pantallas grandes (PC) */
+@media (min-width: 1025px) {
+    #fondo-aviso-cookies-pc {
+        display: block;
+    }
+}
+
+/* Mostrar el fondo del aviso de cookies solo en pantallas pequeñas (móviles y tablets) */
+@media (max-width: 1024px) {
+    .fondo-aviso-cookies.activo {
+        display: block;
+    }
 }
