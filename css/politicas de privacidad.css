@@ -22,7 +22,7 @@ body {
 
 /* Barra de navegación */
 .navbar {
-    transition: all ease-in-out 1s;
+    transition: all ease-in-out 0.5s;
     background: #242424;
     border-bottom: 2.5px solid #e47312;
     padding: 10px 20px;
@@ -69,20 +69,36 @@ body {
     color: #fff;
     font-weight: 600;
     padding: 8px 12px;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar .nav-links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #e8491d;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .nav-links a:hover::before {
+    transform: scaleX(1);
 }
 
 .navbar .nav-links a:hover {
-    background: #e8491d;
-    border-radius: 5px;
+    color: #e8491d;
+    text-shadow: 0 0 10px rgba(232, 73, 29, 0.7);
 }
 
 .navbar .menu-toggle {
     display: none;
     cursor: pointer;
 }
-
-
 
 
 
@@ -117,11 +133,6 @@ body {
     z-index: 1001;
 }
 
-
-
-
-
-
 /* Enlaces de la barra lateral */
 .sidebar .sidebar-links {
     list-style: none;
@@ -132,6 +143,8 @@ body {
 .sidebar .sidebar-links li {
     padding: 15px 20px;
     border-bottom: 1px solid #333;
+    position: relative;
+    overflow: hidden;
 }
 
 .sidebar .sidebar-links li a {
@@ -139,15 +152,32 @@ body {
     text-decoration: none;
     display: flex;
     align-items: center;
+    transition: all 0.3s ease;
 }
 
 .sidebar .sidebar-links li a i {
     margin-right: 10px;
 }
 
+.sidebar .sidebar-links li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #e8491d;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar .sidebar-links li a:hover::before {
+    transform: scaleX(1);
+}
+
 .sidebar .sidebar-links li a:hover {
-    background: #e8491d;
-    border-radius: 5px;
+    color: #e8491d;
+    text-shadow: 0 0 10px rgba(232, 73, 29, 0.7);
 }
 
 /* Botón para abrir la barra lateral */
