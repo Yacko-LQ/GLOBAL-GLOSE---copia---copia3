@@ -80,11 +80,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    // logo Esperar a que la página se haya cargado completamente 
-    window.addEventListener('load', function() {
-        // Seleccionar el contenedor del loader
-        const loader = document.getElementById('loader');
-        
-        // Ocultar el loader después de que la carga esté completa
-        loader.style.display = 'none';
-    });
