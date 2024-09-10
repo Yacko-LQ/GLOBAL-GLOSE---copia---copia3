@@ -76,7 +76,23 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.classList.toggle('active');
         this.classList.toggle('active');
     });
+    
 });
 
 
+// Selecciona todos los enlaces que apunten a secciones internas de la página
+const enlaces = document.querySelectorAll('.nav-links a, .sidebar-links a');
 
+enlaces.forEach(enlace => {
+    enlace.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevenir el comportamiento por defecto
+
+        const destinoID = this.getAttribute('href'); // Obtener la referencia al destino
+        const destino = document.querySelector(destinoID); // Seleccionar el destino
+
+        // Ejecutar el desplazamiento suave hacia la sección
+        destino.scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});

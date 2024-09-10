@@ -1,0 +1,205 @@
+/* Estilo para el botón de accesibilidad circular */
+#accesibilidad-btn {
+   position: fixed;
+    top: 50%;
+    left: 20px; /* Centrado a la izquierda */
+    width: 50px;
+    height: 50px;
+    background-color: #1100ff; /* Mismo color de la barra lateral */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#accesibilidad-btn:hover {
+    background-color: #e8491d; /* Mismo color de hover de otros botones */
+    transform: scale(1.1); /* Ligero aumento al pasar el cursor */
+}
+
+/* Estilo para el menú de accesibilidad */
+#accesibilidad-menu {
+    position: fixed;
+    top: 50%;
+    left: -250px; /* Se oculta a la izquierda inicialmente */
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 1001;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-50%);
+    transition: left 0.3s ease;
+    position: fixed;
+    left: -250px; /* Inicialmente oculto */
+    width: 200px;
+    background-color: #242424;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 999;
+}
+
+#accesibilidad-menu.visible {
+    left: 20px; /* Despliega el menú desde la izquierda */
+}
+
+#accesibilidad-menu h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#accesibilidad-menu button {
+    display: block;
+    margin: 5px auto;
+    padding: 10px;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+#accesibilidad-menu button:hover {
+    background-color: #555;
+}
+
+
+/* Contraste Invertido */
+.contraste-invertido {
+    background-color: #000;
+    color: #fff;
+}
+
+.contraste-invertido a {
+    color: #ff0;
+}
+
+/* Contraste Oscuro */
+.contraste-oscuro {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+.contraste-oscuro a {
+    color: #ff0;
+}
+
+/* Contraste de Luz */
+.contraste-luz {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.contraste-luz a {
+    color: #007bff;
+}
+
+
+
+
+
+
+
+#accesibilidad-menu button {
+    display: block;
+    margin: 5px 0;
+}
+
+/* Estilos de contraste */
+.contraste-invertido {
+    background-color: #000;
+    color: #fff;
+}
+
+.contraste-invertido a {
+    color: #ff0;
+}
+
+.contraste-oscuro {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+.contraste-oscuro a {
+    color: #ff0;
+}
+
+.contraste-luz {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.contraste-luz a {
+    color: #007bff;
+}
+
+/* Clases ocultas */
+.oculto {
+    display: none;
+}
+
+/* Modo Claro */
+.modo-claro {
+    background-color: #fff;
+    color: #000;
+}
+
+.modo-claro a {
+    color: #007bff;
+}
+
+/* Modo Oscuro */
+.modo-oscuro {
+    background-color: #000;
+    color: #e0e0e0;
+}
+
+.modo-oscuro a {
+    color: #bb86fc;
+}
+
+/* Contraste Invertido */
+.contraste-invertido {
+    background-color: #000;
+    color: #fff;
+}
+
+.contraste-invertido a {
+    color: #ff0;
+}
+
+/* Contraste Oscuro */
+.contraste-oscuro {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+.contraste-oscuro a {
+    color: #ff0;
+}
+
+/* Contraste de Luz */
+.contraste-luz {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.contraste-luz a {
+    color: #007bff;
+}
+
+/* Clases ocultas */
+.oculto {
+    display: none;
+}
