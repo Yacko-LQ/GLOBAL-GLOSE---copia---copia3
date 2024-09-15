@@ -1,0 +1,891 @@
+
+
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    user-select: none;
+    
+    
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
+
+
+/* Barra de navegación */
+.navbar {
+    transition: all ease-in-out 0.5s;
+    background: #242424;
+    border-bottom: 2.5px solid #e47312;
+    padding: 10px 20px;
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 10;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 50px;
+    width: auto;
+    margin-right: 1px;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 60px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar .nav-links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #e8491d;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .nav-links a:hover::before {
+    transform: scaleX(1);
+}
+
+.navbar .nav-links a:hover {
+    color: #e8491d;
+    text-shadow: 0 0 10px rgba(232, 73, 29, 0.7);
+}
+
+.navbar .menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+
+/* Barra lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Inicialmente oculta */
+    width: 250px;
+    height: 100%;
+    background: #242424;
+    color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+/* Logo sin círculo */
+.sidebar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background: transparent;
+}
+
+.sidebar-logo img {
+    width: 120px;
+    height: auto;
+    border: none;
+    background: transparent;
+    z-index: 1001;
+}
+
+/* Enlaces de la barra lateral */
+.sidebar .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .sidebar-links li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar .sidebar-links li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.sidebar .sidebar-links li a i {
+    margin-right: 10px;
+}
+
+.sidebar .sidebar-links li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #e8491d;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar .sidebar-links li a:hover::before {
+    transform: scaleX(1);
+}
+
+.sidebar .sidebar-links li a:hover {
+    color: #e8491d;
+    text-shadow: 0 0 10px rgba(232, 73, 29, 0.7);
+}
+
+/* Botón para abrir la barra lateral */
+.sidebar-toggle {
+    position: fixed;
+    top: 70px;
+    left: 20px;
+    background: #242424;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    background: #e8491d;
+}
+
+/* Mostrar la barra lateral */
+.sidebar.open {
+    left: 0;
+}
+
+/* Hacer responsive la barra lateral */
+@media (min-width: 768px) {
+    .sidebar,
+    .sidebar-toggle {
+        display: none;
+    }
+}
+
+/* Estilos para el campo de búsqueda */
+.sidebar-search {
+    padding: 15px 20px;
+    border-bottom: 1px solid #333;
+}
+
+.sidebar-search input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    background-color: #242424;
+    color: #fff;
+}
+
+.sidebar-search input::placeholder {
+    color: #999;
+}
+
+
+/* Sección de presentación */
+
+.hero {
+    height: 100vh;
+    background: url('/fondos_imagenes/about-7-150x150.jpg') no-repeat center center/cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 60px;
+   
+
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.hero .btn {
+    background: #e8491d;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+    background: #c73e16;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+
+
+
+
+
+
+/* Sección de Servicios */
+.services-section,
+.about-section,
+.contact-section {
+    padding: 70px 0;
+    background: #fff;
+    
+}
+
+.services-section h2,
+.about-section h2,
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+}
+
+.services-section h2::after,
+.about-section h2::after,
+.contact-section h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: #e8491d;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.service {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service i {
+    font-size: 48px;
+    color: #e8491d;
+    margin-bottom: 20px;
+}
+
+.service h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.service p {
+    font-size: 16px;
+    color: #666;
+}
+
+.services-grid a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.service {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+
+
+/* Sección de Nosotros */
+.about-section {
+    background-color: #f4f4f4;
+}
+
+
+/* Sección de Opiniones de Clientes */
+.testimonials-section {
+    background-color: #f9f9f9;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+}
+
+.testimonials-section h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: #e8491d;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    max-width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.testimonial p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.testimonial h4 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Animación de ampliación al pasar el cursor */
+.testimonial:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al 105% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta el tamaño de la sombra */
+}
+
+
+
+
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+    .testimonials-section h2 {
+        font-size: 28px;
+    }
+
+    .testimonials-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .testimonials-section h2 {
+        font-size: 24px;
+    }
+
+    .testimonial p {
+        font-size: 14px;
+    }
+
+    .testimonial h4 {
+        font-size: 16px;
+    }
+}
+
+
+/* Sección de Horario de Trabajo */
+.Horario-section {
+    padding: 70px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    
+}
+
+.Horario-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+}
+
+.Horario-section h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: #e8491d;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.Horario-section p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.working-hours-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.working-hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.working-hours-list li:last-child {
+    border-bottom: none;
+}
+
+.day {
+    font-weight: bold;
+    color: #555;
+}
+
+.time {
+    color: #999;
+}
+
+@media screen and (max-width: 768px) {
+    .Horario-section h2 {
+        font-size: 28px;
+    }
+
+    .working-hours-list {
+        font-size: 14px;
+    }
+
+    .working-hours-list li {
+        padding: 6px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Horario-section h2 {
+        font-size: 24px;
+    }
+
+    .working-hours-list {
+        font-size: 12px;
+    }
+
+    .working-hours-list li {
+        padding: 4px 0;
+    }
+}
+
+
+
+
+
+/* Estilo para el botón de desplazamiento hacia arriba */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: #e8491d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #c73e16;
+}
+
+/* Mostrar el botón cuando es necesario */
+#scrollToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+footer{
+    background-color: #111;
+}
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px ;
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding:  10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0,9;
+}
+
+
+
+
+/* Hover affect on social media icon */
+.socialIcons a:hover{
+    background-color: #111;
+    transition: 0.5s;
+}
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+.footerNav{
+    margin: 30px 0;
+}
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li a{
+    color:white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+
+}
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+.footerBottom{
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+.footerBottom p{
+    color: white;
+}
+.designer{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+@media (max-width: 700px){
+    .footerNav ul{
+        flex-direction: column;
+    } 
+    .footerNav ul li{
+        width:100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .socialIcons a{
+        padding: 8px;
+        margin: 4px;
+    }
+}
+
+footer {
+    background-color: #111;
+}
+
+.footerContainer {
+    width: 100%;
+    padding: 70px 30px 20px;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+}
+
+.socialIcons a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialIcons a i {
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+
+.socialIcons a:hover {
+    background-color: #111;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover i {
+    color: white;
+    transition: 0.5s;
+}
+
+.footerNav {
+    margin: 30px 0;
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.footerNav ul li a {
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.footerNav ul li a:hover {
+    opacity: 1;
+}
+
+.footerBottom {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+.footerBottom p {
+    color: white;
+}
+
+.designer {
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+
+@media (max-width: 700px) {
+    .footerNav ul {
+        flex-direction: column;
+    }
+
+    .footerNav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .socialIcons a {
+        padding: 8px;
+        margin: 4px;
+    }
+}
+
+
+.footerLocation {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: white;
+}
+
+.footerLocation i {
+    margin-right: 8px;
+    color: #ff0000;
+}
+
+.footerLocation a {
+    color: inherit; /* Mantiene el color del texto */
+    text-decoration: none;
+}
+
+.footerLocation a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el ratón */
+}
+
+/* Contenedor del loader */
+#loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+/* Estilizar el logo */
+#loader img {
+    width: 150px; /* Ajusta el tamaño del logo según sea necesario */
+    animation: spinLogo 2s linear infinite;
+}
+
+/* Animación de rotación del logo */
+@keyframes spinLogo {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Ajustes específicos para pantallas grandes */
+@media (min-width: 1920px) {
+    /* Aquí puedes ajustar otros elementos específicos si es necesario */
+}
