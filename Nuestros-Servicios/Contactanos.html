@@ -3,25 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electricidad - Nuestros Servicios</title>
-    <link rel="icon" type="image/png" href="logotipo/LogoImagen.png">
-    <link rel="stylesheet" href="/Nuestros-Servicios/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="icon" type="/image/png" href="logotipo/LogoImagen.png">
+    <title>Contactanos</title>
+    <link rel="stylesheet" href="/Nuestros-Servicios/Contactanos.css">
+    <!--Icon-Font-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="/logotipo/LogoImagen.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="css/css-cookies-PC.css">
-    <link rel="stylesheet" href="css/Botom_Accesibilidad.css">
 </head>
 <body>
-      
-
-   
-
-
-    <!-- Barra de navegación -->
-    <nav class="navbar" >
+      <!-- Barra de navegación -->
+      <nav class="navbar" >
         <div class="container" id="nav" style="top: -80px;"> 
             <a href="/index.html" class="logo">
                 <img src="/logotipo/LogoImagen.png" alt="Global Glose Logo">
@@ -31,6 +24,8 @@
             <ul class="nav-links">
                 <li><a href="#" onclick="window.history.back();"><i class="fa-solid fa-arrow-left"></i> Volver</a></li>
             </ul>
+            
+          
             </ul>
             <div class="menu-toggle" id="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -42,7 +37,7 @@
 <div id="sidebar" class="sidebar">
     <!-- Logo circular -->
     <div class="sidebar-logo">
-        <img src="/logotipo/LogoLimpio.png" alt="LogoLimpio">
+        <img src="logotipo/LogoLimpio.png" alt="LogoLimpio">
     </div>
 
     <!-- Campo de búsqueda -->
@@ -52,65 +47,41 @@
 
     <!-- Enlaces de la barra lateral -->
     <ul class="sidebar-links" id="sidebar-links">
-        <ul class="nav-links">
-            <li><a href="#" onclick="window.history.back();"><i class="fa-solid fa-arrow-left"></i> Volver</a></li>
-        </ul>
+        <li><a href="javascript:window.history.back();"><i class="fa-solid fa-arrow-left"></i> Volver</a></li>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+        <li><a href="politicas de privacidad.html"><i class="fa-solid fa-gavel"></i> Políticas de Privacidad</a></li>
+        <li><a href="aviso-cookies.html"><i class="fa-solid fa-cookie"></i> Preferencia de Cookies</a></li>
+      
+    </ul>
 </div>
 <button id="sidebar-toggle" class="sidebar-toggle">
     <i class="fa-solid fa-bars"></i>
 </button>
 
-
-    <!-- cookies PC-->
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB7HJ8K"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-
-    <!-- Sección de Encabezado -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Servicio de Electricidad</h1>
-            <p>Instalación, reparación y mantenimiento de sistemas eléctricos.</p>
+    <div class="container-form">
+        <div class="info-form">
+            <h2>Contáctanos</h2>
+            <p>¿Tienes alguna pregunta o necesitas más información? No dudes en contactarnos a través del formulario a continuación o mediante nuestros canales de contacto.</p>
+            <a href="#"><i class="fa fa-phone"></i> (829)-326-1232</a>
+            <a href="#"><i class="fa fa-envelope"></i> gloseglobalmultiservice@gmail.com</a>
+            <a href="#" ><i class="fa fa-map-marked"></i> C/WINSTON ARNAUD MANZ. 4732 NO. 36 INVIVIENDA SANTO DOMINGO ESTE, R.D</a>
+        
         </div>
-    </section>
+        <form action="#" autocomplete="off">
+            <input type="text" name="nombre" placeholder="Tu Nombre" class="campo">
+            <input type="email" name="email" placeholder="Tu Email" class="campo">
+            <textarea name="mensaje" placeholder="Tu Mensaje..."></textarea>
+            <input type="submit" name="enviar" value="Enviar Mensaje" class="btn-enviar">
+        </form>
+    </div>
+    <div class="container-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d668.81061827031!2d-69.81831184215345!3d18.5124375543788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e0788f8678f377d%3A0x7b7c510eee636433!2sGlose%20Global%20Multiservices!5e0!3m2!1ses-419!2sdo!4v1726837838933!5m2!1ses-419!2sdo" width="600" height="450" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 
-    <!-- Sección de Detalles del Servicio -->
-    <section id="electricidad" class="service-detail">
-        <div class="container">
-            <h2>Electricidad</h2>
-            <p>En <strong>GLOBAL GLOSE</strong>, ofrecemos servicios profesionales de electricidad para hogares, oficinas y negocios. Contamos con personal capacitado para realizar instalaciones y mantenimiento de sistemas eléctricos, brindando soluciones eficaces y seguras.</p>
-
-            <h3>Servicios Incluidos:</h3>
-            <ul>
-                <li>Instalación de sistemas eléctricos completos</li>
-                <li>Reparación de fallos eléctricos</li>
-                <li>Mantenimiento preventivo</li>
-                <li>Actualización de cableado eléctrico</li>
-                <li>Instalación de sistemas de iluminación</li>
-            </ul>
-
-            <h3>Por qué elegirnos:</h3>
-            <p>Somos expertos en el manejo de todo tipo de instalaciones eléctricas y garantizamos la seguridad de nuestros clientes al ofrecer servicios de calidad y soluciones personalizadas.</p>
-        </div>
-    </section>
-
-    <!-- Sección de Llamada a la Acción -->
-    <section class="cta">
-        <div class="container">
-            <h2>¿Necesitas un servicio de electricidad?</h2>
-            <p>Contáctanos para una cotización o más información.</p>
-            <a href="Contactanos.html" class="btn">Contáctanos</a>
-        </div>
-    </section>
-
-    <!-- Botón de desplazamiento hacia arriba -->
-<button id="scrollToTopBtn"><i class="fas fa-arrow-up"></i></button>
-
-
-
-      <!-- Pie de página -->
+	<!-- Botón de desplazamiento hacia arriba -->
+    <button id="scrollToTopBtn"><i class="fas fa-arrow-up"></i></button>
+    
+    <!-- Pie de página -->
 <footer>
     <div class="footerContainer"> 
         <div class="socialIcons"> 
@@ -128,11 +99,10 @@
             </ul>
             
         </div>
-        
     </div>
 
     <div class="footerLocation">
-        <a href="https://maps.app.goo.gl/7n4AooWx6Sz4HFzr6" target="_blank">
+        <a href="https://maps.app.goo.gl/aqPSv8Rr42P945bi7" target="_blank">
             <i class="fa-solid fa-location-dot"></i> C/WINSTON ARNAUD MANZ. 4732 NO. 36 INVIVIENDA SANTO DOMINGO ESTE, R.D
         </a>
 
@@ -147,7 +117,6 @@
     <script src="/js/scroll.js"></script>
     <script src="/js/menu.js"></script>
 	<script src="/js/aviso-cookies.js"></script>
-    <script src="/js/botom_accesibilidad.js"></script>
-    <script src="/js/Nuestros-Servicios.js"></script>
+  
 </body>
 </html>
